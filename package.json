@@ -1,0 +1,20 @@
+{
+  "name": "mb_auth_codes",
+  "version": "1.0.0",
+  "description": "Product authentication app using Node.js, SQLite and Excel uploads",
+  "main": "backend/app.js",
+  "scripts": {
+    "start": "node backend/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "multer": "^2.0.1",
+    "sqlite3": "^5.1.7",
+    "xlsx": "^0.18.5"
+  }
+}
+

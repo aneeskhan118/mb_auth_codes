@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Authentication</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="text-center mb-4">
+      <img src="logo.png" alt="MUSCLE BLAST LOGO" width="50">
+      <h2>🔐 Product Authentication</h2>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast-container position-fixed top-0 end-0 p-3">
+      <div id="uploadToast" class="toast align-items-center text-white bg-success border-0" role="alert">
+        <div class="d-flex">
+          <div class="toast-body" id="toastMsg">Upload Successful</div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast"></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spinner -->
+    <div id="spinner" class="text-center my-3" style="display: none;">
+      <div class="spinner-border text-primary" role="status"></div>
+    </div>
+
+    <!-- Collapsible Upload Section -->
+    <div class="accordion mb-4" id="uploadAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="uploadHeading">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#uploadPanel">
+            Upload Authentication Codes (Excel)
+          </button>
+        </h2>
+        <div id="uploadPanel" class="accordion-collapse collapse">
+          <div class="accordion-body">
+            <form id="uploadForm">
+              <input type="file" class="form-control mb-3" id="excelFile" accept=".xlsx" required />
+              <button type="submit" id="uploadBtn" class="btn btn-success">Upload Excel File</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Code Validation Form -->
+    <div class="form-section">
+      <form id="validateForm">
+        <label for="authCode" class="form-label">Enter Authentication Code</label>
+        <div class="input-group mb-3">
+          <span class="input-group-text"><i class="bi bi-shield-lock"></i></span>
+          <input type="text" id="authCode" class="form-control" placeholder="Enter code" required />
+        </div>
+        <div class="invalid-feedback mb-2" id="inputError" style="display: none;">
+          Please enter a valid authentication code.
+        </div>
+        <button type="submit" id="validateBtn" class="btn btn-primary">Validate</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Result Modal -->
+  <div class="modal fade" id="resultModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title">Validation Result</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body fs-5 d-flex align-items-center justify-content-center gap-2">
+          <i id="resultIcon" class="bi fs-3"></i>
+          <span id="modalMessage"></span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom Script -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -18,4 +18,4 @@ function importExcel(filePath, batchId) {
   stmt.finalize();
 }
 
-module.exports = importExcel;
+module.exports = { importExcel };

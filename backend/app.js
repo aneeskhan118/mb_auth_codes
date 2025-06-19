@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const multer = require('multer');
 const { validateCode } = require('./db');
-const { importExcel } = require('./excellImporter');
+const { importExcel } = require('./excelImporter');
 
 const app = express();
 const port = process.env.PORT || 3000;
